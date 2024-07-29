@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Website with Bottom Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo.svg" alt="Logo"></a>
+        </div>
+        <div class="country-selector">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img id="selected-flag" src="flags/usa.png" alt="Selected Country Flag">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" data-value="us" data-flag="flags/us.svg">USA</a>
+                    <a href="#" data-value="de" data-flag="flags/de.svg">Germany</a>
+                    <a href="#" data-value="it" data-flag="flags/it.svg">Italy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <footer>
+        <nav class="bottom-navbar">
+            <a href="#"><img src="home.svg" alt="Home"></a>
+            <a href="#"><img src="cart.svg" alt="Cart"></a>
+            <a href="#"><img src="balance.svg" alt="Balance"></a>
+        </nav>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>$(document).ready(function() {
+        $('.icon').on('click', function() {
+            // Remove 'selected' class from all icon buttons
+            $('.icon').removeClass('selected');
+            
+            // Add 'selected' class to the clicked button
+            $(this).addClass('selected');
+        });
+    });
+    
+    </script>
+</body>
+</html>

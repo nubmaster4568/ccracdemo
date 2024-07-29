@@ -1,0 +1,1206 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('font2.ttf') format('truetype'); /* Adjust path and filename */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bold';
+    src: url('font2bold.ttf') format('truetype'); /* Adjust path and filename */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'comics';
+    src: url('font.ttf') format('truetype'); /* Adjust path and filename */
+    font-weight: normal;
+    font-style: normal;
+}
+.sugested {
+    margin: -15px;
+    font-family: 'MyCustomFont', sans-serif;
+    font-size: 10px;
+    padding: 25px;
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    text-align: left;
+    background-image: url(background.png);
+    background-size: 110px;
+    background-repeat: no-repeat;
+    background-position: left;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+}
+body {
+    font-family: 'MyCustomFont', sans-serif;
+    background-color: #f4f4f4; /* Fallback color */
+    background-image: url('png.png'); /* Path to your halftone pattern image */
+    background-size: cover; /* Adjust this as needed */
+    background-repeat: repeat; /* Repeat the pattern across the background */
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('png.png') repeat;
+    opacity: 0.1; /* Adjust opacity as needed */
+    z-index: -1; /* Ensure it is behind other content */
+}
+/* Header */
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Space between logo and country selector */
+    align-items: center; /* Center items vertically */
+    position: relative;
+    z-index: 100; /* Ensure header is above other content */
+}
+
+.logo img {
+    height: 80px; /* Adjust height as needed */
+}
+
+/* Custom Dropdown */
+
+/* Custom Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1001; /* Ensure dropdown is above other elements */
+}
+
+.dropbtn {
+    background: linear-gradient(to right, #2976db, #57a7f7); /* Gradient background */
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between flag and text */
+}
+
+.dropbtn img {
+    width: 40px; /* Flag icon size */
+    height: auto;
+    border: solid 1px black;
+    border-radius: 15px;
+    
+}
+
+/* Dropdown content */
+.dropdown-content {
+    color: black;
+    visibility: hidden; /* Hide by default */
+    position: absolute;
+    top: 120%; /* Position below the dropdown button */
+    right: 3%; /* Align with the left edge of the button */
+    background-color: #ffce2c;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure dropdown appears on top */
+    border-radius: 15px;
+    max-width: 200px; /* Limit the maximum width */
+    width: auto; /* Width adjusts based on content */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    white-space: nowrap; /* Prevent wrapping of content */
+    opacity: 0; /* Start with hidden content */
+    transform: translateY(-10px); /* Start slightly above */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+}
+
+/* Show the dropdown menu */
+.dropdown-content.show {
+    visibility: visible; /* Make visible */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide down */
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between flag and text */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content img {
+    width: 20px; /* Flag icon size */
+    height: auto;
+}
+
+/* Show the dropdown menu on button hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide down */
+}
+
+
+
+/* Dropdown button hover effect */
+.dropdown:hover .dropbtn {
+    background-color: #f1c40f;
+}
+
+/* Icon Scroll */
+.icon-scroll {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 10; /* Ensure icon scroll has lower z-index than dropdown */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+.icon-scroll {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 10; /* Ensure icon scroll has lower z-index than dropdown */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+/* Icon Wrapper */
+.icon-wrapper {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    gap: 10px; /* Spacing between icons */
+    padding: 0 20px; /* Optional: adjust padding for spacing */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    position: relative; /* Positioning context for child elements */
+    width: 100%; /* Full width of the container */
+}
+
+.icon-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
+}
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between button and text */
+}
+/* Icons as buttons */
+.icon {
+    width: 50px; /* Default size of icons */
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border: solid 1px black; /* Remove default button border */
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth scaling and opacity effects */
+    outline: none;
+}
+.icon-text {
+    font-family: 'MyCustomFont', sans-serif; /* Fallback to sans-serif */
+
+    font-size: 12px; /* Adjust the font size as needed */
+    color: #333; /* Text color */
+    text-align: center; /* Center text under the icon */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Add some test icons to force scrolling */
+.icon:nth-child(1) { background-image: url('icon1.svg'); }
+.icon:nth-child(2) { background-image: url('icon2.svg'); }
+.icon:nth-child(3) { background-image: url('icon3.svg'); }
+.icon:nth-child(4) { background-image: url('icon4.svg'); }
+.icon:nth-child(5) { background-image: url('icon5.svg'); }
+/* Repeat if necessary to force enough width for scrolling */
+
+/* Overlay effect for selected icons */
+.icon.selected {
+    transform: scale(0.9); /* Scale up to 1.1 times the size when selected */
+}
+
+.icon.selected::after {
+    content: ''; /* Empty content for the overlay */
+    position: absolute;
+    border-radius: 15px; /* Position overlay absolutely within the icon */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(213, 213, 213, 0.104); /* Red overlay with 30% opacity */
+    z-index: 1; /* Ensure overlay appears on top */
+    pointer-events: none; /* Ensure overlay does not interfere with click events */
+}
+.filters select {
+    font-family: 'MyCustomFont', sans-serif !important;
+    font-size: 11px !important;
+    border: solid 1px black;
+}
+/* Filters */
+.filters {
+    display: flex;
+    gap: 10px; /* Spacing between filter dropdowns */
+    padding: 10px 20px; /* Padding around the filters */
+    position: relative;
+    z-index: 1; /* Ensure filters stay above other content */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.filters::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.filter-dropdown {
+    display: inline-block; /* Ensure dropdowns are only as wide as their content */
+    min-width: 100px; /* Minimum width for dropdowns */
+    max-width: 200px; /* Maximum width for dropdowns */
+}
+
+.filter-dropdown select {
+    width: 100%; /* Full width of the container */
+    padding: 5px;
+    border-radius: 15px;
+    color: rgb(60, 60, 60);
+    background: linear-gradient(135deg, #fad55c, #f2c203); /* Gradient background */
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-dropdown select:focus {
+    border-color: #1c5db1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-navbar {
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right, #007AFF, #087fff);
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 40px);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Ensure it is above all other elements */
+}
+
+
+
+.bottom-navbar a img {
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    /* Optionally, you can set the size to auto to maintain aspect ratio */
+    /* width: auto; */
+    /* height: auto; */
+}
+
+
+
+
+
+
+
+
+.reviews-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.reviews {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 100px; /* Adjust this height as needed */
+    background: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: solid 1px black;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure the image does not overflow */
+    position: relative; /* To position the image within the div */
+}
+
+.reviews img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the div while maintaining aspect ratio */
+    display: block; /* Remove any extra space below the image */
+}
+
+/* Make sure there are no scrollbars on the container */
+.reviews-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.products-grid {
+    display: flex; /* Use flexbox layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    padding: 20px 20px 20px 20px;
+    align-items: flex-start; 
+    scrollbar-width: none;
+    /* Align items to the start of the container */
+}
+.products-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    border: solid;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: inset 0px 4px 100px rgba(164, 255, 74, 0.218); /* Inset shadow from top to bottom */
+}
+
+.product-item {
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    flex: 0 0 auto; /* Ensure it does not shrink or grow */
+    width: 100px; /* Adjust width as needed */
+    margin-right: 20px; /* Spacing between product items */
+    background: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    border: solid 1px;
+    height: 100px; /* Fixed height for the product item */
+    position: relative;
+    box-shadow: 30px 7px 20px #2976db75;
+}
+.product-item2 {
+    position: relative;
+    background: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    border: solid 1px;
+    height: 200px; /* Fixed height for the product item */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+.product-item2 img {
+    width: 100%;
+    height: 100%; /* Ensure the image covers the container */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Image is behind the badge and product info */
+}
+.price-badge2 {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    background: linear-gradient(135deg, #3fff3f, #83ff8d); /* Green gradient background */
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    z-index: 1;
+    box-shadow: 4px 4px 8px rgba(148, 255, 26, 0.475); /* Shadow drops to the left bottom */
+    /* Badge is on top of the image */
+}
+.product-info2 {
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    background: linear-gradient(180deg, #f5f5f5, #e5f9ff); /* Adjust colors as needed */
+    border: solid 0.5px;
+    position: relative; /* Ensure it’s in the correct stacking context */
+    z-index: 1; /* Ensure it's below .bottom-navbar */
+    margin-top: auto; /* Pushes the product info to the bottom */
+    height: 60px; /* Adjust height to fit the remaining space */
+    box-sizing: border-box; /* Include padding in height calculation */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 1); /* Shadow drops to the left bottom */
+}
+.product-info {
+    font-size: 9px;
+    z-index: 1;
+    padding-top: 5px;
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(180deg, #f5f5f5, #e5f9ff);
+    border: solid 0.5px;
+    margin-top: auto;
+    height: 20px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
+}
+
+
+.product-item img {
+    width: 100%;
+    height: 100%; /* Ensure the image covers the container */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Image is behind the badge and product info */
+}
+
+.price-badge {
+    margin: 0 auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #3fff3f, #83ff8d);
+    color: rgb(0, 0, 0);
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    z-index: 1;
+    box-shadow: 4px 4px 8px rgba(148, 255, 26, 0.475);
+}
+
+
+
+
+.products-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.product-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.product-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-title button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.product-title button:hover {
+    background: #0056b3;
+}
+
+.product-content img {
+    width: 100%;
+    height: auto;
+}
+
+.product-content p {
+    margin: 0;
+}
+
+
+
+/* Define the keyframes for the animation */
+@keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Style the modal */
+
+
+/* Modal background */
+.custom-modal {
+    position: fixed;
+    bottom: -80%; /* Start hidden */
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: white;
+    transition: bottom 0.5s ease; /* Animation for opening and closing */
+    overflow: hidden;
+    z-index: 9999; /* Ensure it is above all other elements */
+}
+
+/* Modal expanded */
+.custom-modal.expanded {
+    bottom: 0;
+    height: 100%;
+    transition: bottom 0.5s ease-in-out, height 0.5s ease-in-out; /* Smooth slide-up and expansion effect */
+    /* Full viewport height */
+}
+
+/* Modal content */
+.custom-modal-content {
+    border-radius: 15px;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%; /* Adjust width as needed */
+    height: 100%; /* Full height */
+    position: relative; /* For positioning close button and slider */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    overflow: hidden; /* Hide overflow content */
+    transition: border-radius 0.5s ease-in-out; /* Smooth border-radius transition */
+}
+.custom-product-info {
+    text-align: center; /* Center text */
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    transition: bottom 0.5s ease-in-out, height 0.5s ease-in-out; /* Smooth slide-up and expansion effect */
+    /* Ensure the button and price badge are within bounds */
+}
+/* Modal expanded content */
+.custom-modal.expanded .custom-modal-content {
+    border-radius: 0; /* Remove border-radius for full-screen view */
+}
+
+/* Close button */
+.custom-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.custom-close:hover,
+.custom-close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Slider container */
+.custom-slider-container {
+    width: 100%;
+    max-height: 60%; /* Adjust based on your preference */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slider */
+.custom-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Slides */
+.custom-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.custom-slides img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation arrows */
+.custom-prev,
+.custom-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.custom-prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.custom-next {
+    right: 0;
+    border-radius: 3px 3px 3px 3px;
+}
+
+/* Buy button */
+.custom-buy-button {
+    background-color: #66ff6c;
+    color: black;
+    border: solid 1px black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px 0; /* Space around the button */
+}
+
+
+
+.payment-title {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.sections {
+    color: rgb(41, 41, 41);
+
+    margin: 0;
+}
+/* Basic spinner styling */
+.loading-spinner {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Ensure it's above all other elements */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+}
+/* Spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.section-step {
+    background: #45AEF5;
+    border-radius: 16px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.section-block {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border-radius: 24px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    align-self: flex-start;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+.section-caption {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8994A3;
+    margin-bottom: 20px;
+}
+.section-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px 0px 14px;
+    background: #45AEF5;
+    border-radius: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+    height: 48px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 150ms ease-in-out;
+    text-decoration: none;
+}
+
+
+
+.wallet-block {
+    border-radius: 15px;
+    color: white;
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #25272e;
+    padding-bottom: 20px;
+    display: inline-block;
+    width: 90%;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.wallet-title2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    padding-bottom: 15px;
+}
+.wallet-title {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    padding-bottom: 15px; /* Align the title to the start (left) */
+}
+
+.wallet-field {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.wallet-field input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: rgb(13, 13, 13);
+}
+
+.wallet-field button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.wallet-field button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.css-ni9hf8 {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(-104px + 100vh);
+}
+.css-14tiaba {
+    padding: 16px;
+    background: rgb(25, 32, 51);
+    border-radius: 16px;
+}
+
+.css-12xb3c3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+.css-pv6ryy {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentcolor;
+    vertical-align: middle;
+    fill: none;
+}
+.css-1rzo072 {
+    align-items: center;
+    height: 50px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 6px;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+
+}
+.css-1rzo0722 {
+    align-items: center;
+    height: 50px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 6px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 2px;
+
+}
+.css-dni0pk[aria-readonly="true"], .css-dni0pk[readonly], .css-dni0pk[data-readonly] {
+    user-select: all;
+}
+
+.css-dni0pk {
+    width: 100%;
+    min-width: 0px;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    position: relative;
+    appearance: none;
+    
+    height: 48px;
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    border-radius: 10px;
+    padding: 0px 56px 0px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    pointer-events: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    --chakra-line-clamp: 1;
+}
+
+.css-1flfxcl {
+    display: inline-flex;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+    position: absolute;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    line-height: 20px;
+    font-weight: 600;
+    height: 40px;
+    min-width: unset;
+    font-size: 15px;
+    padding-inline: 20px;
+    padding: unset;
+    top: 4px;
+    right: 4px;
+    flex-shrink: 0;
+    width: 40px;
+    background: rgba(49, 61, 94, 0.3);
+    transition: all 0.2s ease 0s;
+    border-radius: 8px;
+}
+
+.css-8ptgm5 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0.4;
+    margin-bottom: 16px;
+}
+
+.css-ktc5z7 {
+    cursor: pointer;
+    text-decoration: none;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: 48px;
+    background: rgb(0, 122, 255);
+    box-shadow: rgba(51, 149, 255, 0.08) 0px 6px 20px 0px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all 0.2s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.css-1e6ma0l {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.css-ktc5z7 {
+    cursor: pointer;
+    text-decoration: none;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: block;
+    height: 48px;
+    background: rgb(0, 122, 255);
+    box-shadow: rgba(51, 149, 255, 0.08) 0px 6px 20px 0px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all 0.2s ease 0s;
+    margin-bottom: 8px;
+}
+.css-ktc5z2 {
+    margin-top:20px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: block;
+    height: 48px;
+    background: rgb(0, 122, 255);
+    box-shadow: rgba(51, 149, 255, 0.08) 0px 6px 20px 0px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all 0.2s ease 0s;
+    margin-bottom: 8px;
+}
+.css-1e6ma0l {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+*, ::before, ::after {
+    border-color: var(--ton-colors-gray-200);
+    overflow-wrap: break-word;
+}
+
+.css-5p7olr {
+    display: inline-flex;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    line-height: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+
+    padding-inline: 20px;
+    width: 100%;
+    height: 48px;
+    background: rgba(49, 61, 94, 0.32);
+    font-size: 14px;
+    transition: all 0.2s ease 0s;
+}
+
+.chakra-button {
+    position: absolute; /* Position the button absolutely within the container */
+    right: 10px; /* Adjust this value to position the button inside the input */
+    top: 50%;
+    transform: translateY(-50%); /* Center the button vertically */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.css-1qm1lh {
+    margin-bottom: 16px;
+}
+
+.css-uusoxa {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(49, 61, 94, 0.3);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.css-y3pmzh {
+    width: 16px;
+    height: 16px;
+    background: url(https://cloud.tonroll.com/assets/walletPaymentMethodsLogo/usdLogo.svg) center center / contain no-repeat;
+    flex-shrink: 0;
+}
+.css-uusoxa {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(49, 61, 94, 0.3);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.css-kr151x {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.css-138ot80 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+}
+.css-uusoxa {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(49, 61, 94, 0.3);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.css-y3pmzh {
+    width: 16px;
+    height: 16px;
+    background: url(https://cloud.tonroll.com/assets/walletPaymentMethodsLogo/usdLogo.svg) center center / contain no-repeat;
+    flex-shrink: 0;
+}
+.css-138ot80 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+}
+.css-kr151x {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+.css-1m7ritw {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--chakra-line-clamp);
+    --chakra-line-clamp: 1;
+}.css-1m7ritw1 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--chakra-line-clamp);
+    --chakra-line-clamp: 1;
+}
+.css-138ot80 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+}
+.css-kr151x {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}

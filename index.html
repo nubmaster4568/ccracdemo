@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Website with Bottom Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="country-selector">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img id="selected-flag" src="flags/usa.png" alt="Selected Country Flag">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" data-value="us" data-flag="flags/us.svg">USA</a>
+                    <a href="#" data-value="de" data-flag="flags/de.svg">Germany</a>
+                    <a href="#" data-value="it" data-flag="flags/it.svg">Italy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="icon-scroll">
+        <div class="icon-wrapper">
+            <div class="icon-item">
+                <button class="icon" style="background-image: url('cash.png');" aria-label="Cash"></button>
+                <span class="icon-text">Vapes</span>
+            </div>
+            <div class="icon-item">
+                <button class="icon" style="background-image: url('card.png');" aria-label="Card"></button>
+                <span class="icon-text">THC Oil</span>
+            </div>
+            <div class="icon-item">
+                <button class="icon" style="background-image: url('weed.svg');" aria-label="Weed"></button>
+                <span class="icon-text">Weed</span>
+            </div>
+            <!-- More icons as needed -->
+        </div>
+    </section>
+
+    <section class="reviews-container">
+        <div class="reviews">
+            <img src="Frame1.png" alt="Review 1">
+        </div>
+        <div class="reviews">
+            <img src="review2.jpg" alt="Review 2">
+        </div>
+        <div class="reviews">
+            <img src="review3.jpg" alt="Review 3">
+        </div>
+    </section>
+
+    <section class="products-grid">
+        <div class="sugested">Top Sales</div>
+        <!-- Product Items -->
+        <div class="product-item" data-id="1">
+            <div class="price-badge">$10.00</div>
+            <img src="product.jpg" alt="Product 1">
+            <div class="product-info">
+                <h3>Kaws Rocks</h3>
+            </div>
+        </div>
+        <div class="product-item" data-id="1">
+            <div class="price-badge">$10.00</div>
+            <img src="product.jpg" alt="Product 1">
+            <div class="product-info">
+                <h3>Kaws Rocks</h3>
+            </div>
+        </div>
+        <div class="product-item" data-id="1">
+            <div class="price-badge">$10.00</div>
+            <img src="product.jpg" alt="Product 1">
+            <div class="product-info">
+                <h3>Kaws Rocks</h3>
+            </div>
+        </div>
+        <div class="product-item" data-id="1">
+            <div class="price-badge">$10.00</div>
+            <img src="product.jpg" alt="Product 1">
+            <div class="product-info">
+                <h3>Kaws Rocks</h3>
+            </div>
+        </div>
+        <!-- Repeat for other products -->
+    </section>
+
+    <section class="filters">
+        <div class="filter-dropdown">
+            <select id="filter1">
+                <option value="">Select Filter 1</option>
+                <option value="filter1a">Filter 1a</option>
+                <option value="filter1b">Filter 1b</option>
+            </select>
+        </div>
+        <div class="filter-dropdown">
+            <select id="filter1">
+                <option value="">Select Filter 1</option>
+                <option value="filter1a">Filter 1a</option>
+                <option value="filter1b">Filter 1b</option>
+            </select>
+        </div>
+        <div class="filter-dropdown">
+            <select id="filter1">
+                <option value="">Select Filter 1</option>
+                <option value="filter1a">Filter 1a</option>
+                <option value="filter1b">Filter 1b</option>
+            </select>
+        </div>
+        <div class="filter-dropdown">
+            <select id="filter1">
+                <option value="">Select Filter 1</option>
+                <option value="filter1a">Filter 1a</option>
+                <option value="filter1b">Filter 1b</option>
+            </select>
+        </div>
+        <div class="filter-dropdown">
+            <select id="filter1">
+                <option value="">Select Filter 1</option>
+                <option value="filter1a">Filter 1a</option>
+                <option value="filter1b">Filter 1b</option>
+            </select>
+        </div>
+
+        <!-- Repeat for other filters -->
+    </section>
+
+    <section class="products-grid2">
+        <!-- Product Items -->
+        <div class="product-item2" data-id="2">
+            <div class="price-badge2">$10.00</div>
+            <img src="product.jpg" alt="Product 1">
+            <div class="product-info2">
+                <h3 style="
+                font-size: 13px;
+                margin-bottom: 2px;
+            ">Kaws Rocks</h3>
+                <p style="
+                font-size: 11px;
+            ">Description of products</p>
+            </div>
+        </div>
+        <div class="product-item2" data-id="2">
+            <div class="price-badge2">$10.00</div>
+            <img src="product.jpg" alt="Product 1">
+            <div class="product-info2">
+                <h3 style="
+                font-size: 13px;
+                margin-bottom: 2px;
+            ">Kaws Rocks</h3>
+                <p style="
+                font-size: 11px;
+            ">Description of products</p>
+            </div>
+        </div>
+        <div class="product-item2" data-id="2">
+            <div class="price-badge2">$10.00</div>
+            <img src="product2.jpg" alt="Product 1">
+            <div class="product-info2">
+                <h3 style="
+                font-size: 13px;
+                margin-bottom: 2px;
+            ">Kaws Rocks</h3>
+                <p style="
+                font-size: 11px;
+            ">Description of products</p>
+            </div>
+        </div>
+        <div class="product-item2" data-id="2">
+            <div class="price-badge2">$10.00</div>
+            <img src="product3.jpg" alt="Product 1">
+            <div class="product-info2">
+                <h3 style="
+                font-size: 13px;
+                margin-bottom: 2px;
+            ">Kaws Rocks</h3>
+                <p style="
+                font-size: 11px;
+            ">Description of products</p>
+            </div>
+        </div>
+        <!-- Repeat for other products -->
+    </section>
+
+    <!-- Product Modal -->
+<!-- Product Modal -->
+
+
+
+
+
+
+
+    <footer>
+        <nav class="bottom-navbar">
+            <a href="#"><img src="home.svg" alt="Home"></a>
+            <a href="#"><img src="cart.svg" alt="Cart"></a>
+            <a href="#"><img src="balance.svg" alt="Balance"></a>
+        </nav>
+    </footer>
+<!-- Modal Structure -->
+<div id="product-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="custom-close">&times;</span>
+        <div class="custom-slider-container">
+            <div class="custom-slider">
+                <div class="custom-slides">
+                    <!-- Images for the slider -->
+                    <img src="product.jpg" alt="Product Image 1">
+                    <img src="pproduct.jpg" alt="Product Image 2">
+                    <img src="product.jpg" alt="Product Image 3">
+                </div>
+                <!-- Navigation arrows -->
+                <a class="custom-prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="custom-next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+
+        <div class="custom-product-info" id="productInfo">
+            <!-- Placeholder for product info -->
+        </div>
+        <div class="custom-deposit-address" id="depositAddress" style="display: none;">
+                <div class="sections">
+        <div class="section-block">
+          <div class="section-step">1</div>
+          <div class="section-title">
+Make a transaction          
+</div>
+            <div class="wallet-title2">This is yorue personal bitcoin adress for transaction</div>
+            <div class="wallet-field">
+                <div class="css-1rzo0722">
+                    <input readonly="" aria-readonly="true" class="chakra-input css-dni0pk" value="" id="wallet-address" style="font-size: 17px;">
+                    <button type="button" class="chakra-button css-1flfxcl" id="copy-button">
+                        <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-pv6ryy" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15c-.932 0-1.398 0-1.765-.152a2 2 0 01-1.083-1.083C2 13.398 2 12.932 2 12V5.2c0-1.12 0-1.68.218-2.108a2 2 0 01.874-.874C3.52 2 4.08 2 5.2 2H12c.932 0 1.398 0 1.765.152a2 2 0 011.083 1.083C15 3.602 15 4.068 15 5m-2.8 17h6.6c1.12 0 1.68 0 2.108-.218a2 2 0 00.874-.874C22 20.48 22 19.92 22 18.8v-6.6c0-1.12 0-1.68-.218-2.108a2 2 0 00-.874-.874C20.48 9 19.92 9 18.8 9h-6.6c-1.12 0-1.68 0-2.108.218a2 2 0 00-.874.874C9 10.52 9 11.08 9 12.2v6.6c0 1.12 0 1.68.218 2.108a2 2 0 00.874.874C10.52 22 11.08 22 12.2 22z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+       
+        </div>
+
+        <div class="section-block" id="second-block">
+          <div class="section-step"><div>2</div></div>
+          <div class="section-title">
+            Transaction details
+          </div>
+          <div class="section-caption">
+
+          </div>
+
+          <div class="css-1qm1lh"><div class="css-uusoxa"><div class="css-kr151x">Amount in BTC:</div><div class="css-138ot80"><div class="css-1m7ritw1">0.00</div></div></div><div class="css-uusoxa"><div class="css-kr151x">Amount in USD: </div><div class="css-138ot80"><div class="css-y3pmzh"></div><div class="css-1m7ritw">0</div></div></div><div class="css-uusoxa"><div class="css-kr151x">Transaction type: </div><div class="css-138ot80"><div class="css-1m7ritw">1-3 minutes</div></div></div></div>
+          <div id="loading-spinner" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+        </div> 
+      </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>$(document).ready(function() {
+ function showSpinner() {
+        $('#loading-spinner').css('display', 'flex');
+    }
+    const walletAddressInput = document.getElementById('wallet-address');
+
+    function typeWalletAddress(address, inputElement, speed) {
+                let index = 0;
+                const intervalId = setInterval(() => {
+                    inputElement.value += address.charAt(index);
+                    index++;
+                    if (index >= address.length) {
+                        clearInterval(intervalId);
+                    }
+                }, speed); // Use the provided speed for typing
+            }
+
+
+    function hideSpinner() {
+        $('#loading-spinner').css('display', 'none');
+    }        $('.product-item, .product-item2').on('click', function() {
+            var productId = $(this).data('id');
+            $('#product-modal .custom-product-info').html('<div class="custom-price-badge">$10.00</div><h3>Product Details for ID: ' + productId + '</h3><p>Details about the product will go here.</p><button class="custom-buy-button">Buy Now</button>');
+            $('#product-modal').css('display', 'block');
+            $('#product-modal').removeClass('expanded');
+             // Reset to normal view
+            $('#product-modal').css('bottom', '0'); // Reset to normal position
+            setTimeout(function() {
+                $('#product-modal').css('bottom', '0'); // Ensure modal is visible
+            }, 10);
+        });
+    
+        // Handle close button click
+        $('.custom-close').on('click', function() {
+            $('#product-modal').css('bottom', '-80%');
+            setTimeout(function() {
+                $('#product-modal').css('display', 'none');
+            }, 500);
+        });
+    
+        // Close the modal when clicking outside of the modal content
+        $(window).on('click', function(event) {
+            if ($(event.target).is('#product-modal')) {
+                $('#product-modal').css('bottom', '-80%');
+                setTimeout(function() {
+                    $('#product-modal').css('display', 'none');
+                }, 500);
+            }
+        });
+        $(document).on('click', '.icon', function() {
+            $('.icon').removeClass('selected')
+            $(this).addClass('selected')
+
+        });
+        // Handle Buy Now button click to expand modal and show deposit address
+        $(document).on('click', '.custom-buy-button', function() {
+            $('#product-modal').addClass('expanded');
+            $('#product-modal').css('bottom', '0'); // Ensure it expands to full view
+            $('#product-modal').css('height', '100%'); // Full height
+            $('#productInfo').hide();
+            typeWalletAddress('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh', walletAddressInput, 50); // Adjust speed (ms) as needed
+
+            showSpinner(); // Show spinner before loading content
+
+            $('.custom-slider-container').hide();
+            $('#depositAddress').show();
+        });
+    
+        // Slider functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = $('.custom-slides img');
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+        }
+    });
+    </script>
+</body>
+</html>
